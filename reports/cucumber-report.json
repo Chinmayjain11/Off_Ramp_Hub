@@ -1,0 +1,453 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "deposit-relay---offramphub-otp-verification-page;user-successfully-logs-in-with-correct-otp",
+        "keyword": "Scenario",
+        "line": 33,
+        "name": "User successfully logs in with correct OTP",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 430623900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "the user opens the Deposit Relay page",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6098376600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 34,
+            "name": "the user enters the valid OTP",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2142875600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "the user should land on the next screen",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:88"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10579999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 289838900
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 1
+          },
+          {
+            "name": "@deposit",
+            "line": 1
+          },
+          {
+            "name": "@positive",
+            "line": 32
+          },
+          {
+            "name": "@smoke",
+            "line": 32
+          },
+          {
+            "name": "@otp",
+            "line": 32
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deposit-relay---offramphub-otp-verification-page;wrong-otp-shows-error-message",
+        "keyword": "Scenario",
+        "line": 39,
+        "name": "Wrong OTP shows error message",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 446997600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "the user opens the Deposit Relay page",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6260217599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 40,
+            "name": "the user enters the invalid OTP",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2142614900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 42,
+            "name": "the OTP screen should still be visible",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8433899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 319025900
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 1
+          },
+          {
+            "name": "@deposit",
+            "line": 1
+          },
+          {
+            "name": "@negative",
+            "line": 38
+          },
+          {
+            "name": "@validation",
+            "line": 38
+          },
+          {
+            "name": "@otp",
+            "line": 38
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deposit-relay---offramphub-otp-verification-page;partial-otp-does-not-trigger-auto-submit",
+        "keyword": "Scenario",
+        "line": 45,
+        "name": "Partial OTP does not trigger auto submit",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 398891400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "the user opens the Deposit Relay page",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6098977899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 46,
+            "name": "the user enters a partial OTP",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2152462399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 47,
+            "name": "the OTP screen should still be visible",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10502999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 254623299
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 1
+          },
+          {
+            "name": "@deposit",
+            "line": 1
+          },
+          {
+            "name": "@negative",
+            "line": 44
+          },
+          {
+            "name": "@validation",
+            "line": 44
+          },
+          {
+            "name": "@otp",
+            "line": 44
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deposit-relay---offramphub-otp-verification-page;special-characters-as-otp-shows-error",
+        "keyword": "Scenario",
+        "line": 50,
+        "name": "Special characters as OTP shows error",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 399372799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "the user opens the Deposit Relay page",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5878641599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 51,
+            "name": "the user enters special characters as OTP",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2135476799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 53,
+            "name": "the OTP screen should still be visible",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8514799
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 289372900
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 1
+          },
+          {
+            "name": "@deposit",
+            "line": 1
+          },
+          {
+            "name": "@negative",
+            "line": 49
+          },
+          {
+            "name": "@validation",
+            "line": 49
+          },
+          {
+            "name": "@otp",
+            "line": 49
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deposit-relay---offramphub-otp-verification-page;otp-field-accepts-exactly-4-valid-characters",
+        "keyword": "Scenario",
+        "line": 56,
+        "name": "OTP field accepts exactly 4 valid characters",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 391724799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "the user opens the Deposit Relay page",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5913129800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 57,
+            "name": "the user enters the valid OTP",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2144790699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 59,
+            "name": "the OTP screen should still be visible",
+            "match": {
+              "location": "src\\steps\\deposit.steps.js:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10109399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 333745199
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 1
+          },
+          {
+            "name": "@deposit",
+            "line": 1
+          },
+          {
+            "name": "@edge",
+            "line": 55
+          },
+          {
+            "name": "@otp",
+            "line": 55
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "deposit-relay---offramphub-otp-verification-page",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Deposit Relay - OffRampHub OTP Verification Page",
+    "tags": [
+      {
+        "name": "@smoke",
+        "line": 1
+      },
+      {
+        "name": "@deposit",
+        "line": 1
+      }
+    ],
+    "uri": "features\\login\\login.feature"
+  }
+]
