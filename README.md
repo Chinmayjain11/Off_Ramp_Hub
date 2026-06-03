@@ -28,14 +28,33 @@ The framework follows industry-standard automation practices including:
 
 ```
 project-root/
-│
-├── tests/                 # Test specifications
-├── pages/                 # Page Object Model classes
-├── utils/                 # Utility/helper functions
-├── test-data/             # Test data files
-├── playwright.config.js   # Playwright configuration
-├── package.json
-├── package-lock.json
+├── features/
+│   ├── login/
+│   │   └── login.feature
+│   └── transfer/
+│       └── transfer.feature
+├── src/
+│   ├── pages/
+│   │   ├── BasePage.js
+│   │   ├── LoginPage.js
+│   │   ├── DashboardPage.js
+│   │   └── TransferPage.js
+│   ├── steps/
+│   │   ├── login.steps.js
+│   │   └── transfer.steps.js
+│   ├── hooks/
+│   │   └── hooks.js
+│   ├── world/
+│   │   └── CustomWorld.js
+│   └── utils/
+│       ├── logger.js
+│       ├── testDataFactory.js
+│       └── configLoader.js
+├── test-data/
+├── reports/
+├── .env
+├── cucumber.js
+└── package.json
 └── README.md
 ```
 
