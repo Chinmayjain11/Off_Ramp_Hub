@@ -1,0 +1,29 @@
+{
+  "name": "off_ramp_hub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:smoke": "cross-env TAGS=@smoke npx cucumber-js",
+    "test:otp":        "npx cucumber-js --profile otp",
+    "test:regression": "cross-env TAGS=@regression npx cucumber-js",
+    "test:headed": "cross-env HEADLESS=false TAGS=@smoke npx cucumber-js",
+    "test:otp:headed": "cross-env HEADLESS=false npx cucumber-js --profile otp",
+    "test:all": "npx cucumber-js",
+    "test:dryrun": "npx cucumber-js --dry-run"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.3.2",
+    "@cucumber/html-formatter": "^21.3.1",
+    "@playwright/test": "^1.60.0",
+    "allure-playwright": "^3.9.0",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2",
+    "winston": "^3.19.0"
+  }
+}
