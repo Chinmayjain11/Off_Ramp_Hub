@@ -1,194 +1,245 @@
-# Off Ramp Hub - UI Automation Framework
+# Off Ramp Hub - Test Automation Framework
 
 ## Overview
 
-This project is an automated test framework built using **Playwright** and **JavaScript** to validate the core functionalities of the Off Ramp Hub application.
+This repository contains a scalable and maintainable test automation framework developed for the Off Ramp Hub application using Playwright, Cucumber BDD, and JavaScript.
 
-The framework follows industry-standard automation practices including:
-- Page Object Model (POM)
-- Reusable utilities
-- Data-driven testing approach
-- Playwright Test Runner
-- HTML Reporting
+The framework has been designed following industry-standard automation practices with a strong emphasis on:
+
+* Maintainability
+* Reusability
+* Scalability
+* Readability
+* Cross-browser compatibility
+* Code quality
+
+The framework supports automation of multiple business workflows including Consumer and Entity journeys.
 
 ---
 
 ## Technology Stack
 
-| Technology | Version |
-|------------|----------|
-| Node.js | Latest LTS |
-| Playwright | Latest |
-| JavaScript | ES6+ |
-| Playwright Test | Latest |
+| Technology              | Purpose                             |
+| ----------------------- | ----------------------------------- |
+| Playwright              | End-to-End Web Automation           |
+| JavaScript (ES6+)       | Programming Language                |
+| Cucumber BDD            | Behavior Driven Development         |
+| Node.js                 | Runtime Environment                 |
+| ESLint                  | Static Code Analysis & Code Quality |
+| Dotenv                  | Environment Configuration           |
+| Playwright HTML Reports | Execution Reporting                 |
+| GitHub                  | Source Control                      |
+
+---
+
+## Framework Design Principles
+
+The framework follows a layered architecture:
+
+### Page Object Model (POM)
+
+UI locators and page actions are encapsulated within Page Objects to improve maintainability and reduce code duplication.
+
+### Reusable Base Page
+
+A centralized BasePage implementation contains common utilities such as:
+
+* Navigation
+* Synchronization
+* Scrolling
+* Click actions
+* Screenshot capture
+* Generic dropdown handling
+* Dynamic element interaction
+
+### Custom World Implementation
+
+Cucumber World has been customized to:
+
+* Manage browser lifecycle
+* Share execution context
+* Maintain page state across steps
+* Improve test isolation
+
+### Configuration Driven Design
+
+Environment-specific values are externalized through `.env` files allowing seamless execution across environments.
+
+---
+
+## Business Workflows Covered
+
+### Consumer Workflow
+
+* User Authentication
+* Beneficiary Management
+* Product Selection
+* Application Submission
+* Validation Scenarios
+
+### Entity Workflow
+
+* User Authentication
+* Beneficiary Management
+* Product Selection
+* Application Submission
+* Validation Scenarios
 
 ---
 
 ## Framework Structure
 
-```
-project-root/
+src/
 ├── features/
-│   ├── login/
-│   │   └── login.feature
-│   └── transfer/
-│       └── transfer.feature
-├── src/
-│   ├── pages/
-│   │   ├── BasePage.js
-│   │   ├── LoginPage.js
-│   │   ├── DashboardPage.js
-│   │   └── TransferPage.js
-│   ├── steps/
-│   │   ├── login.steps.js
-│   │   └── transfer.steps.js
-│   ├── hooks/
-│   │   └── hooks.js
-│   ├── world/
-│   │   └── CustomWorld.js
-│   └── utils/
-│       ├── logger.js
-│       ├── testDataFactory.js
-│       └── configLoader.js
-├── test-data/
+│ ├── consumer/
+│ └── entity/
+│
+├── pages/
+│ ├── BasePage.js
+│ ├── LoginPage.js
+│ ├── BeneficiaryProductPage.js
+│ └── ...
+│
+├── steps/
+│ ├── consumer/
+│ ├── entity/
+│ └── common/
+│
+├── support/
+│ ├── hooks/
+│ ├── world/
+│ └── utilities/
+│
 ├── reports/
-├── .env
-├── cucumber.js
-└── package.json
-└── README.md
-```
+├── screenshots/
+└── videos/
 
 ---
 
-## Prerequisites
+## Key Features
 
-Before executing the tests, ensure the following are installed:
+### Cross Browser Execution
 
-- Node.js (v18 or above)
-- Git
-- Playwright
+Framework supports:
 
-Verify installation:
+* Chromium
+* Firefox
+* WebKit
 
-```bash
-node -v
-npm -v
-```
+### Screenshot Capture
+
+Automatic screenshot capture on failure for easier debugging.
+
+### Video Recording
+
+Execution videos are generated to assist with troubleshooting and root cause analysis.
+
+### Environment Configuration
+
+Environment-specific values are managed using dotenv.
+
+### Reusable Synchronization
+
+Custom synchronization mechanisms have been implemented to reduce flaky test executions.
+
+### Modular Workflow Design
+
+The framework has been structured to easily support future business workflows without impacting existing automation.
 
 ---
 
-## Installation
+## Code Quality
 
-Clone the repository:
+### ESLint Integration
 
-```bash
-git clone <repository-url>
-```
+ESLint has been integrated to enforce coding standards and improve maintainability.
 
-Navigate to the project:
+Benefits include:
 
-```bash
-cd Off_Ramp_Hub
-```
+* Consistent coding style
+* Early defect detection
+* Improved code readability
+* Reduced technical debt
+* Better collaboration across teams
+
+Example execution:
+
+npm run lint
+
+or
+
+npx eslint .
+
+---
+
+## Execution Commands
 
 Install dependencies:
 
-```bash
 npm install
-```
 
-Install Playwright browsers:
+Run Smoke Suite:
 
-```bash
-npx playwright install
-```
+npm run smoke
 
----
+Run Regression Suite:
 
-## Running Tests
+npm run regression
 
-### Execute all tests
+Run End-to-End Suite:
 
-```bash
-npx playwright test
-```
+npm run e2e
 
-### Execute a specific test
+Run OTP Suite:
 
-```bash
-npx playwright test tests/example.spec.js
-```
+npm run otp
 
-### Execute in headed mode
+Run ESLint Validation:
 
-```bash
-npx playwright test --headed
-```
-
-### Execute on a specific browser
-
-```bash
-npx playwright test --project=chromium
-```
+npm run lint
 
 ---
 
-## Test Reports
+## Reporting
 
-Generate and open Playwright HTML Report:
+The framework generates:
 
-```bash
-npx playwright show-report
-```
+* Execution Reports
+* Screenshots
+* Videos
 
-Reports are generated automatically after test execution.
-
----
-
-## Framework Features
-
-- Cross-browser execution
-- Parallel test execution
-- Page Object Model design
-- Reusable locators and methods
-- Detailed HTML reports
-- Screenshot capture on failure
-- Easy maintenance and scalability
+These artifacts assist in debugging and provide execution traceability.
 
 ---
 
-## Assumptions
+## Engineering Considerations
 
-- Test environment is stable and accessible.
-- Test data used is non-production data.
-- Application URLs and credentials are configurable.
+While implementing the framework, the focus was not limited to automating the required scenarios. Equal emphasis was placed on:
+
+* Framework architecture
+* Scalability
+* Reusability
+* Maintainability
+* Code quality
+* Test stability
+* Ease of onboarding for future contributors
 
 ---
 
 ## Future Enhancements
 
-- CI/CD integration using GitHub Actions or GitLab CI
-- API automation integration
-- Data-driven execution from external files
-- Allure reporting
-- Docker-based execution
-- AI-assisted test generation
+* CI/CD Integration using GitHub Actions
+* Dockerized Test Execution
+* Allure Reporting
+* API Automation Layer
+* Database Validation Layer
+* Parallel Execution Optimization
+* Test Data Management Framework
 
 ---
 
 ## Author
 
-**Chinmay Jain**
+Chinmay Jain
 
-Senior QA Automation Engineer
 
-Expertise:
-- Playwright
-- Selenium
-- API Automation
-- Java
-- JavaScript
-- CI/CD
-- Quality Engineering
-
----
